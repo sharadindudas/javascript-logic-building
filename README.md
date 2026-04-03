@@ -30,12 +30,12 @@ A curated collection of core JavaScript logic building and DSA foundational prog
 - [x] Custom groupBy Array
 - [x] Flatten Array
 - [x] Largest Number Array
+- [x] Second Largest Number Array
 - [x] Max Min Sum Array
 - [x] Move Zeroes To End
 - [x] Odd Even Array
 - [x] Reverse An Array
 - [x] Search Number Array
-- [x] Second Largest Number Array
 - [x] Smallest Number Array
 - [x] Transpose a matrix
 

@@ -24,6 +24,7 @@ A curated collection of core JavaScript logic building and DSA foundational prog
 ### 📦 Array Based Problems
 
 - [x] Count Negative Numbers Array
+- [x] Generate the first n fibonacci numbers in an Array
 - [x] Flatten Array
 - [x] Frequency Counter
 - [x] Largest Number Array

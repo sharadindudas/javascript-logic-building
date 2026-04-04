@@ -1,19 +1,19 @@
 // Write a function that tells if the given number is prime or not
 function checkPrimeNumber(input) {
-    if (typeof input !== "number") {
-        throw new Error("Input must be a number");
-    }
+  if (typeof input !== "number") {
+    throw new Error("Input must be a number");
+  }
 
-    if (!Number.isInteger(input) || input <= 1) {
-        return false;
-    }
+  if (!Number.isInteger(input) || input <= 1) {
+    return false;
+  }
 
-    for (let i = 2; i <= Math.sqrt(input); i++) {
-        if (input % i === 0) {
-            return false;
-        }
+  for (let i = 2; i <= Math.sqrt(input); i++) {
+    if (input % i === 0) {
+      return false;
     }
-    return true;
+  }
+  return true;
 }
 console.log(checkPrimeNumber(11));
 console.log(checkPrimeNumber(2));

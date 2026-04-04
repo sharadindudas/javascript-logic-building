@@ -4,26 +4,26 @@
 // 243 -> 2^3 + 4^3 + 3^3 = 8 + 64 + 27 = 99 (false)
 
 function isArmStrongNumber(input) {
-    if (typeof input !== "number") throw new Error("Please provide a number");
+  if (typeof input !== "number") throw new Error("Please provide a number");
 
-    if (!Number.isFinite(input)) {
-        throw new Error("Please provide a valid number");
-    }
+  if (!Number.isFinite(input)) {
+    throw new Error("Please provide a valid number");
+  }
 
-    if (!Number.isInteger(input) || input < 0) {
-        throw new Error("Please provide a non-negative integer");
-    }
+  if (!Number.isInteger(input) || input < 0) {
+    throw new Error("Please provide a non-negative integer");
+  }
 
-    if (input === 0) return true;
+  if (input === 0) return true;
 
-    const inputString = input.toString();
-    let sum = 0;
-    for (let i = 0; i < inputString.length; i++) {
-        const val = Number(inputString[i]);
-        sum += val ** inputString.length;
-    }
+  const inputString = input.toString();
+  let sum = 0;
+  for (let i = 0; i < inputString.length; i++) {
+    const val = Number(inputString[i]);
+    sum += val ** inputString.length;
+  }
 
-    return sum === input;
+  return sum === input;
 }
 console.log(isArmStrongNumber(153)); // true
 console.log(isArmStrongNumber(370)); // true

@@ -24,14 +24,14 @@ A curated collection of core JavaScript logic building and DSA foundational prog
 ### 📦 Array Based Problems
 
 - [x] Count Negative Numbers Array
-- [x] Generate the first n fibonacci numbers in an Array
+- [x] Generate the first n fibonacci numbers Array
+- [x] Frequency Counter Array
+- [x] Remove Duplicates Array (Set and Map)
 - [x] Flatten Array
-- [x] Frequency Counter
 - [x] Largest Number Array
 - [x] Max Min Sum Array
 - [x] Move Zeroes To End
 - [x] Odd Even Array
-- [x] Remove Duplicates Array
 - [x] Reverse An Array
 - [x] Search Number Array
 - [x] Second Largest Number Array

@@ -27,6 +27,7 @@ A curated collection of core JavaScript logic building and DSA foundational prog
 - [x] Generate the first n fibonacci numbers Array
 - [x] Frequency Counter Array
 - [x] Remove Duplicates Array (Set and Map)
+- [x] Custom groupBy Array
 - [x] Flatten Array
 - [x] Largest Number Array
 - [x] Max Min Sum Array

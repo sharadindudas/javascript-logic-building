@@ -32,7 +32,7 @@ A curated collection of core JavaScript logic building and DSA foundational prog
 - [x] Largest Number Array
 - [x] Smallest Number Array
 - [x] Second Largest Number Array
-- [x] Max Min Sum Array
+- [x] Largest number formed Array
 - [x] Move Zeroes To End
 - [x] Odd Even Array
 - [x] Reverse An Array

@@ -5,9 +5,6 @@ A curated collection of core JavaScript logic building and DSA foundational prog
 ---
 
 ## ✅ Completed Problems
-
-### 🔢 Number Based Problems
-
 - [x] Armstrong Number
 - [x] Average Set Of Numbers
 - [x] Factorial Of A Number
@@ -18,11 +15,6 @@ A curated collection of core JavaScript logic building and DSA foundational prog
 - [x] Simple Interest
 - [x] Sum Of All Digits
 - [x] Swap Two Numbers
-
----
-
-### 📦 Array Based Problems
-
 - [x] Count Negative Numbers Array
 - [x] Generate the first n fibonacci numbers Array
 - [x] Frequency Counter Array
@@ -31,18 +23,14 @@ A curated collection of core JavaScript logic building and DSA foundational prog
 - [x] Flatten Array
 - [x] Largest Number Array
 - [x] Smallest Number Array
-- [x] Second Largest Number Array
+- [x] Second Largest number Array
 - [x] Largest number formed Array
+- [x] Get result by path Object
 - [x] Move Zeroes To End
 - [x] Odd Even Array
 - [x] Reverse An Array
 - [x] Search Number Array
 - [x] Transpose a matrix
-
----
-
-### 🧵 String Based Problems
-
 - [x] Count Character Occurrence
 - [x] Count Characters
 - [x] Count Vowels Consonants
@@ -52,11 +40,6 @@ A curated collection of core JavaScript logic building and DSA foundational prog
 - [x] Reverse A String
 - [x] Alphabetical Order
 - [x] Two String Anagram
-
----
-
-### 🧠 Logic & Pattern Based
-
 - [x] Fizzbuzz
 - [x] Multiplication Table
 - [x] Odd Even

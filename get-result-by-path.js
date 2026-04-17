@@ -1,86 +1,84 @@
-function getResultByPath(path, obj) {
-  const normalizedPath = getPath(path)
-  const tokens = splitPath(normalizedPath)
+// You are given a nested JavaScript object and a string that represents a path to a deeply nested value within that object. The path is dot-separated and may include array indices written in square brackets (e.g., "data.results[0].status[1].type". Write a function getResultByPath(path, response) that extracts and returns the value at the given path within the object.
 
-  
-  let copiedObj = obj
-  for(const token of tokens){
-    if(copiedObj === undefined) return undefined
-    if(copiedObj === null) return null
-    
-    copiedObj = copiedObj[token]
-  }
-  
-  return copiedObj
-}
-
-function getPath(path){
-  let output = ""
-  
-  for(let i = 0; i < path.length; i++){
-    const char = path[i]
-    if(char === "["){
-      output+= "."
-    }else if(char === "]"){
-      output+= ""
-    }else{
-      output+= char
+function normalizePath(path) {
+  let output = "";
+  for (let i = 0; i < path.length; i++) {
+    const char = path[i];
+    if (char === "[") {
+      output += ".";
+    } else if (char === "]") {
+      output += "";
+    } else {
+      output += char;
     }
   }
-  
-   if (output[0] === ".") {
+
+  if (output[0] === ".") {
     output = output.slice(1);
   }
-  
-  return output
+
+  return output;
 }
 
-function splitPath(path){
-  const output = []
-  let current = ""
-  
-  for(let i = 0; i < path.length; i++){
-    const char = path[i]
-    
-    if(char === "."){
-      output.push(current)
-      current = ""
+function customSplitPath(path) {
+  let currentStr = "";
+  let output = [];
+
+  for (let i = 0; i < path.length; i++) {
+    const char = path[i];
+    if (char === ".") {
+      output.push(currentStr);
+      currentStr = "";
     } else {
-      current+= char
+      currentStr += char;
     }
   }
-  
-  output.push(current)
-  return output
+
+  output.push(currentStr);
+  return output;
 }
 
-console.log(getResultByPath("data.results.status", {
-  data: {
-    results: {
-      status: "completed",
-      error: "",
-    },
-  },
-}));
+function getResultByPath(path, obj) {
+  const normalizedPath = normalizePath(path);
 
-console.log(getResultByPath("data.results[1].status[0].type", {
-  data: {
-    results: [
-      {
-        status: "completed",
-        error: ""
-      },
-      {
-        status: [
-          { type: "done" },
-          { type: "start" }
-        ],
-        error: ""
-      }
-    ]
+  const splitPath = customSplitPath(normalizedPath);
+
+  let output = obj;
+  for (let i = 0; i < splitPath.length; i++) {
+    const key = splitPath[i];
+    if (output === undefined || output === null) return output;
+    output = output[key];
   }
-}));
 
-console.log(getResultByPath("a.b.c", { a: {} }) )
-console.log(getResultByPath("a.b", { a: null }) )
-console.log(getResultByPath("[0].name", [{ name: "John" }]) )
+  return output;
+}
+
+console.log(
+  getResultByPath("data.results.status", {
+    data: {
+      results: {
+        status: "completed",
+        error: "",
+      },
+    },
+  }),
+);
+console.log(
+  getResultByPath("data.results[1].status[0].type", {
+    data: {
+      results: [
+        {
+          status: "completed",
+          error: "",
+        },
+        {
+          status: [{ type: "done" }, { type: "start" }],
+          error: "",
+        },
+      ],
+    },
+  }),
+);
+console.log(getResultByPath("a.b.c", { a: {} }));
+console.log(getResultByPath("a.b", { a: null }));
+console.log(getResultByPath("[0].name", [{ name: "John" }]));

@@ -77,3 +77,23 @@ console.log(generateFibonacciUsingNumber(0)); // nothing
 
     n1 = 2 n2 = 3 || 5 < 5 // iteration ends
 */
+
+function fibonacciSeriesV2(input) {
+  if (input <= 0) return [];
+
+  if (input === 1) return [0];
+
+  const output = [0, 1];
+  let n1 = 0,
+    n2 = 1;
+
+  for (let i = 2; i < input; i++) {
+    let n3 = n1 + n2;
+    output.push(n3);
+    n1 = n2;
+    n2 = n3;
+  }
+
+  return output;
+}
+console.log(fibonacciSeriesV2(5));

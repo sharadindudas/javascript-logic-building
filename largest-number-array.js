@@ -1,24 +1,21 @@
-function findLargest(arr) {
-  if (!Array.isArray(arr)) return false;
-  if (arr.length === 0) return null;
+function findLargestNumber(input) {
+  if (!Array.isArray(input)) {
+    throw new Error("Please provide an array");
+  }
 
-  let max = -Infinity;
+  if (input.length === 0) return null;
 
-  for (let i = 0; i < arr.length; i++) {
-    const value = arr[i];
-
-    if (typeof value !== "number" || !Number.isFinite(value)) {
-      return false;
-    }
-
-    if (value > max) {
-      max = value;
+  let largestNumber = input[0];
+  for (let i = 1; i < input.length; i++) {
+    if (input[i] > largestNumber) {
+      largestNumber = input[i];
     }
   }
 
-  return max;
+  return largestNumber;
 }
-console.log(findLargest([3, 1, 2])); // 3
-console.log(findLargest([-5, 2, -3, 4])); // 4
-console.log(findLargest([0, 2, 3])); // 3
-console.log(findLargest([])); // null
+
+console.log(findLargestNumber([3, 1, 2])); // 3
+console.log(findLargestNumber([-5, 2, -3, 4])); // 4
+console.log(findLargestNumber([0, 2, 3])); // 3
+console.log(findLargestNumber([])); // null

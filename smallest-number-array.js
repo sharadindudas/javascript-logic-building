@@ -1,24 +1,20 @@
-function findSmallest(arr) {
-  if (!Array.isArray(arr)) return false;
-  if (arr.length === 0) return null;
+function findSmallestNumber(input) {
+  if (!Array.isArray(input)) {
+    throw new Error("Please provide an array");
+  }
 
-  let min = Infinity;
+  if (input.length === 0) return null;
 
-  for (let i = 0; i < arr.length; i++) {
-    const value = arr[i];
-
-    if (typeof value !== "number" || !Number.isFinite(value)) {
-      return false;
-    }
-
-    if (value < min) {
-      min = value;
+  let smallestNumber = input[0];
+  for (let i = 1; i < input.length; i++) {
+    if (input[i] < smallestNumber) {
+      smallestNumber = input[i];
     }
   }
 
-  return min;
+  return smallestNumber;
 }
-console.log(findSmallest([3, 1, 2])); // 1
-console.log(findSmallest([-5, 2, -3, 4])); // -5
-console.log(findSmallest([0, 2, 3])); // 0
-console.log(findSmallest([])); // null
+console.log(findSmallestNumber([3, 1, 2])); // 1
+console.log(findSmallestNumber([-5, 2, -3, 4])); // -5
+console.log(findSmallestNumber([0, 2, 3])); // 0
+console.log(findSmallestNumber([])); // null
